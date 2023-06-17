@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "b066afc5-2043-4d55-986a-af60182f5393",
+		"name": "MLFLOW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27798235",
+		"_collection_link": "https://solar-flare-225496.postman.co/workspace/MLFLOW~06049ecd-f176-4205-ab54-82ce12f84f12/collection/27798235-b066afc5-2043-4d55-986a-af60182f5393?action=share&creator=27798235&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "get experiment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/experiments/get?experiment_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"get"
+					],
+					"query": [
+						{
+							"key": "experiment_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create experiment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"pstmancreated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/experiments/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get certain experiment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/experiments/get-by-name?experiment_name=pstmancreated",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"get-by-name"
+					],
+					"query": [
+						{
+							"key": "experiment_name",
+							"value": "pstmancreated"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete experiemnt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"experiment_id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/experiments/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restore  experiement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"experiment_id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/experiments/restore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "artifcates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/artifacts/list?run_id=89c077298210465e9fefb3b941f2ebaa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"artifacts",
+						"list"
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "89c077298210465e9fefb3b941f2ebaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registered model create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"registeredfromrestapi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/registered-models/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"registered-models",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get registered model",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Rename registered",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"iris-classifier\",\r\n    \"new_name\":\"new-iris-classifier\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/registered-models/rename",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"registered-models",
+						"rename"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transition model stage version",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"iris-classifier\",\r\n    \"version\":\"1\",\r\n    \"stage\":\"Production\",\r\n    \"archive_existing_versions\":true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/model-versions/transition-stage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"model-versions",
+						"transition-stage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alias of model",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"iris-classifier\",\r\n    \"alias\":\"alias-iris-classifier\",\r\n    \"version\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/2.0/mlflow/registered-models/alias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"registered-models",
+						"alias"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
